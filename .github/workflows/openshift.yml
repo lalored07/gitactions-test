@@ -30,13 +30,17 @@ env:
   # 🖊️ EDIT your repository secrets to log into your OpenShift cluster and set up the context.
   # See https://github.com/redhat-actions/oc-login#readme for how to retrieve these values.
   # To get a permanent token, refer to https://github.com/redhat-actions/oc-login/wiki/Using-a-Service-Account-for-GitHub-Actions
+  REGISTRY: docker.io/lalored07
+  REGISTRY_USER: lalored07
+  REGISTRY_TOKEN: ${{secrets.REGISTRY_PASSWORD}}
+  
   OPENSHIFT_SERVER: ${{ secrets.OPENSHIFT_SERVER }}
   OPENSHIFT_TOKEN: ${{ secrets.OPENSHIFT_TOKEN }}
   # 🖊️ EDIT to set the kube context's namespace after login. Leave blank to use your user's default namespace.
   OPENSHIFT_NAMESPACE: ""
 
   # 🖊️ EDIT to set a name for your OpenShift app, or a default one will be generated below.
-  APP_NAME: ""
+  APP_NAME: "redsoft-app"
 
   # 🖊️ EDIT with the port your application should be accessible on.
   # If the container image exposes *exactly one* port, this can be left blank.
